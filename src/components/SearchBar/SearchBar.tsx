@@ -1,8 +1,12 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, FormikHelpers, FormikValues  } from "formik";
 import css from "./SearchBar.module.css";
 
-const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = (values, actions) => {
+
+type SearchBarProps = {
+  onSubmit: (value: string) => void;
+};
+const SearchBar = ({ onSubmit }:SearchBarProps) => {
+  const handleSubmit = (values: FormikValues,   actions: FormikHelpers<any>) : void => {
     const formattedSearch = values.search.trim().toLowerCase();
     onSubmit(formattedSearch);
     actions.resetForm();

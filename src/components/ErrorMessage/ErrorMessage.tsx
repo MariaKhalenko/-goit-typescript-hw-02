@@ -1,3 +1,8 @@
+type ErrorMessage = {
+  message: string;
+};
+
+
 const ErrorMessage = () => {
   return (
     <div>

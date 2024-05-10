@@ -1,7 +1,13 @@
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
+import { ImageDataType, ModalDataType } from "../../types";
 
-const ImageGallery = ({ images, onImageClick }) => {
+type ImageGalleryProps = {
+   onImageClick: (image: ModalDataType) => void;
+  images: ImageDataType[];
+};
+
+const ImageGallery = ({ images, onImageClick }: ImageGalleryProps) => {
   return (
     <ul className={css.gallery}>
       {images.map((image) => (
