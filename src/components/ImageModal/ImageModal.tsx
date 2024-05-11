@@ -1,11 +1,11 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
-import { ModalDataType } from "../../types";
+import {ModalDataType  } from "../../types";
 
 type ImageModalProps = {
   onCloseModal: () => void;
  isOpen: boolean;
-  image: ModalDataType;
+  image: ModalDataType | null;
 };
 
 Modal.setAppElement("#root");

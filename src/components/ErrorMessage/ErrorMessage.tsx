@@ -1,9 +1,12 @@
-type ErrorMessage = {
-  message: string;
+import axios, { AxiosError } from "axios";
+
+
+type ErrorMessageProps = {
+  error: Error | AxiosError;
 };
 
 
-const ErrorMessage = () => {
+const ErrorMessage = ({ error }: ErrorMessageProps) => {
   return (
     <div>
       <p>Oops! Something went wrong! Please reload the page!</p>
